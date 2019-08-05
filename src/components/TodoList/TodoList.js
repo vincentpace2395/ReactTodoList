@@ -1,10 +1,11 @@
 import React from 'react';
+import TodoItem from "../TodoItem/TodoItem";
 
 class TodoList extends React.Component {
     render() {
         return (
             <div>
-                TodoList
+                <TodoItem />
                 {/*
                     1. add todo
                     2. display todo
