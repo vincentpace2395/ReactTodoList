@@ -9,7 +9,7 @@ class TodoItem extends React.Component {
                 <label>
                     Label
                 </label>
-                <button style={{backgroundColor: 'red', borderRadius: '4px', float: 'right'}}>Remove</button>
+                <button style={{backgroundColor: 'red', borderRadius: '4px', float: 'right', height: '20px'}}>Remove</button>
             </div>
         );
     }
