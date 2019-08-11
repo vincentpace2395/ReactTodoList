@@ -2,6 +2,7 @@ import React from 'react';
 import './NewItem.css';
 
 class NewItem extends React.Component {
+
     render() {
         return (
             <div className='new-item-input'>
@@ -10,7 +11,6 @@ class NewItem extends React.Component {
                     <input />
                 </span>
                 <button className='btn-add'>Add</button>
-                <button className='btn-close'>Close</button>
             </div>
         );
     }
