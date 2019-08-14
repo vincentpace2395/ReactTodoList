@@ -8,12 +8,13 @@ class NewItem extends React.Component {
 
     addBtnHandler = () => {
         /*{Add new label with this.state.text}*/
+
     };
 
-    textChangeHandler = () => {
+    textChangeHandler = event => {
         return (
             this.setState({
-                text: 'x'
+                text: event.target.value
             }, () => {
                 console.log(this.state.text)
             })
