@@ -5,7 +5,7 @@ class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <TodoItem />
+                {this.props.items.map(item => <TodoItem label={item.label} />)}
                 {/*
                     1. add todo
                     2. display todo

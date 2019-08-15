@@ -1,16 +1,19 @@
 import React from 'react';
+import TodoList from '../TodoList/TodoList';
 import './NewItem.css';
-import TodoItem from "../TodoItem/TodoItem";
 
 class NewItem extends React.Component {
     state = {
-        text: null
+        text: null,
+        todoList: []
     };
 
     addBtnHandler = () => {
         /*{Add new label with this.state.text}*/
         return (
-            <TodoItem label={this.state.text} />
+            this.setState({
+                todoList: [...this.state.todoList, {label: this.state.text}]
+            })
         );
     };
 
@@ -36,6 +39,7 @@ class NewItem extends React.Component {
                     onClick={this.addBtnHandler}>
                     Add
                 </button>
+                <TodoList items={this.state.todoList} />
             </div>
         );
     }
