@@ -7,7 +7,7 @@ class TodoItem extends React.Component {
             <div className='todo-item'>
                 <input type="checkbox" />
                 <label>
-                    Label
+                    {this.props.label}
                 </label>
                 <button style={{backgroundColor: 'red', borderRadius: '4px', float: 'right', height: '20px'}}>Remove</button>
             </div>
