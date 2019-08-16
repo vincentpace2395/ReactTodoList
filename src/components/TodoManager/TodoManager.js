@@ -1,30 +1,23 @@
 import React from 'react';
-import TodoList from '../TodoList/TodoList';
-import './NewItem.css';
+import TodoList from "../TodoList/TodoList";
+import './TodoManager.css';
 
-class NewItem extends React.Component {
-    state = {
+class TodoManager extends React.Component {
+    state= {
         text: null,
         todoList: []
     };
 
-    addBtnHandler = () => {
-        /*{Add new label with this.state.text}*/
-        return (
-            this.setState({
-                todoList: [...this.state.todoList, {label: this.state.text}]
-            })
-        );
+    textChangeHandler = event => {
+        this.setState({
+            text: event.target.value
+        });
     };
 
-    textChangeHandler = event => {
-        return (
-            this.setState({
-                text: event.target.value
-            }, () => {
-                console.log(this.state.text)
-            })
-        )
+    addBtnHandler = () => {
+        this.setState({
+            todoList: [...this.state.todoList, {label: this.state.text}]
+        });
     };
 
     render() {
@@ -45,4 +38,4 @@ class NewItem extends React.Component {
     }
 };
 
-export default NewItem;
+export default TodoManager;
