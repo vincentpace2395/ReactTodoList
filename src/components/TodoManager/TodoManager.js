@@ -3,9 +3,15 @@ import TodoList from "../TodoList/TodoList";
 import './TodoManager.css';
 
 class TodoManager extends React.Component {
-    state= {
+    state = {
         text: null,
         todoList: []
+    };
+
+    clearTodoList = () => {
+        this.setState({
+            todoList: []
+        });
     };
 
     textChangeHandler = event => {
@@ -16,7 +22,10 @@ class TodoManager extends React.Component {
 
     addBtnHandler = () => {
         this.setState({
+            text: null,
             todoList: [...this.state.todoList, {label: this.state.text}]
+        }, () => {
+            this.refs.todo.value = ''
         });
     };
 
@@ -25,13 +34,22 @@ class TodoManager extends React.Component {
             <div className='new-item-input'>
                 <span>
                     <label>New Item</label>
-                    <input onChange={this.textChangeHandler}/>
+                    <input onChange={this.textChangeHandler} ref="todo"/>
                 </span>
                 <button
-                    className='btn-add'
+                    disabled={!this.state.text}
                     onClick={this.addBtnHandler}>
                     Add
                 </button>
+                {/*{this.state.todoList === [] ? null : (*/}
+                    <button
+                        disabled
+                        className='btn-clear'
+                        onClick={this.clearTodoList}>
+                        Clear
+                    </button>
+                {/*)}*/}
+
                 <TodoList items={this.state.todoList} />
             </div>
         );

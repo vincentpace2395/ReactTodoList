@@ -1,7 +1,11 @@
-.btn-add {
+button {
     background-color: green;
     margin-left: 5px;
     border-radius: 4px;
+}
+
+.btn-clear {
+    background-color: lightgrey!important;
 }
 
 input {
