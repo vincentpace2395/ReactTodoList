@@ -5,12 +5,14 @@ import './TodoManager.css';
 class TodoManager extends React.Component {
     state = {
         text: null,
-        todoList: []
+        todoList: [],
+        isTodoEmpty: true
     };
 
     clearTodoList = () => {
         this.setState({
-            todoList: []
+            todoList: [],
+            isTodoEmpty: true
         });
     };
 
@@ -23,7 +25,8 @@ class TodoManager extends React.Component {
     addBtnHandler = () => {
         this.setState({
             text: null,
-            todoList: [...this.state.todoList, {label: this.state.text}]
+            todoList: [...this.state.todoList, {label: this.state.text}],
+            isTodoEmpty: false
         }, () => {
             this.refs.todo.value = ''
         });
@@ -43,7 +46,7 @@ class TodoManager extends React.Component {
                 </button>
                 {/*{this.state.todoList === [] ? null : (*/}
                     <button
-                        disabled
+                        disabled={this.state.isTodoEmpty}
                         className='btn-clear'
                         onClick={this.clearTodoList}>
                         Clear
