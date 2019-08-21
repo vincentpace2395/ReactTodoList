@@ -9,6 +9,16 @@ class TodoManager extends React.Component {
         isTodoEmpty: true
     };
 
+    deleteHandler = itemToDelete => {
+        let newItems = this.state.items.filter(newItem => {
+            return newItem != itemToDelete
+        });
+
+        this.setState({
+            items: newItems
+        })
+    };
+
     clearTodoList = () => {
         this.setState({
             todoList: [],
@@ -44,14 +54,12 @@ class TodoManager extends React.Component {
                     onClick={this.addBtnHandler}>
                     Add
                 </button>
-                {/*{this.state.todoList === [] ? null : (*/}
                     <button
                         disabled={this.state.isTodoEmpty}
                         className='btn-clear'
                         onClick={this.clearTodoList}>
                         Clear
                     </button>
-                {/*)}*/}
 
                 <TodoList items={this.state.todoList} />
             </div>

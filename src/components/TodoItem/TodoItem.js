@@ -3,9 +3,6 @@ import './TodoItem.css';
 
 class TodoItem extends React.Component {
 
-    removeButtonHandler = () => {
-
-    };
 
     render() {
         return (
@@ -15,7 +12,7 @@ class TodoItem extends React.Component {
                     {this.props.label}
                 </label>
                 <button
-                    onClick={this.removeButtonHandler}
+                    // onClick={this.props.deleteHandler.bind(null, item)}
                     style={{backgroundColor: 'red', borderRadius: '4px', float: 'right', height: '20px'}}>
                     Remove
                 </button>
