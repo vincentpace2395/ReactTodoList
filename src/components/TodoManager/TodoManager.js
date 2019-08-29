@@ -61,7 +61,7 @@ class TodoManager extends React.Component {
                         Clear
                     </button>
 
-                <TodoList items={this.state.todoList} />
+                <TodoList items={this.state.todoList} deleteHandler={this.deleteHandler}/>
             </div>
         );
     }

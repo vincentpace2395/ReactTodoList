@@ -3,7 +3,6 @@ import './TodoItem.css';
 
 class TodoItem extends React.Component {
 
-
     render() {
         return (
             <div className='todo-item'>
