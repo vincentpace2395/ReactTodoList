@@ -10,11 +10,11 @@ class TodoItem extends React.Component {
                 <label>
                     {this.props.label}
                 </label>
-                <button
-                    // onClick={this.props.deleteHandler.bind(null, item)}
-                    style={{backgroundColor: 'red', borderRadius: '4px', float: 'right', height: '20px'}}>
-                    Remove
-                </button>
+                {/*<button*/}
+                {/*    // onClick={this.props.deleteHandler.bind(null, item)}*/}
+                {/*    style={{backgroundColor: 'red', borderRadius: '4px', float: 'right', height: '20px'}}>*/}
+                {/*    Remove*/}
+                {/*</button>*/}
             </div>
         );
     }

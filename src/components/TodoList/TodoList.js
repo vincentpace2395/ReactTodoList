@@ -15,8 +15,6 @@ class TodoList extends React.Component {
                             <TodoItem label={item.label} />
                         </React.Fragment>
                     )
-
-
                 })}
 
             </div>
